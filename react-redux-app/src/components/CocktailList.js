@@ -11,3 +11,5 @@ const CocktailList = props => {
     )
 
 }
+
+export default CocktailList
