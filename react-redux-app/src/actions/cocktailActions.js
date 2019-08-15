@@ -11,7 +11,7 @@ export const getData = () => {
       .get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin")
       .then(res => {
         console.log(res.data);
-        dispatch({ type: FETCH_COCKTAIL_DATA_SUCCESS, paylod: red.data });
+        dispatch({ type: FETCH_COCKTAIL_DATA_SUCCESS, paylod: res.data });
       })
       .get(err => {
         dispatch({ type: FETCH_COCKTAIL_DATA_FAILURE, payload: err.response });

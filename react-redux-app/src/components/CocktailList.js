@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { getData } from "../actions"
+
 import Cocktail from "./Cocktail";
 
 const CocktailList = props => {
