@@ -1,14 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
-import { getData } from "../actions"
+import { getData } from "../actions";
 
 import Cocktail from "./Cocktail";
 
 const CocktailList = props => {
+  console.log(props);
   return (
     <div>
-      <Cocktail />
+      <h1>Tasty Gin Cocktails</h1>
+      <button onClick={props.getData}>
+        {props.isLoading ? (
+          <Loader type="tailspin" color="#00BFFF" height="15" width="100" />
+        ) : (
+          "Get Gin Cocktail Data"
+        )}
+      </button>
+      {props.cocktails &&
+        props.cocktails.map(drink => (
+          <Cocktail key={drink.idDrink} cocktail={drink} />
+        ))}
     </div>
   );
 };
