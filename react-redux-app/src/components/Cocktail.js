@@ -1,12 +1,32 @@
-import React from 'react';
+import React from "react";
+
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles({
+    card: {
+      maxWidth: 345,
+    },
+    media: {
+      height: 140,
+    },
+  });
 
 const Cocktail = props => {
-    console.log("cocktail", props)
+    const classes = useStyles();
+  console.log("cocktail", props);
   return (
-    <div>
+    <Card className={classes.card}>
       <h4>{props.cocktail.strDrink}</h4>
-      <img src={props.cocktail.strDrinkThumb} alt={props.cocktail.strDrink} />
-    </div>
+      <CardMedia
+        className={classes.media}
+        image={props.cocktail.strDrinkThumb}
+        title={props.cocktail.strDrink}
+      />
+    </Card>
   );
 };
 
