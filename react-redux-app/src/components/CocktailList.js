@@ -22,14 +22,14 @@ const CocktailList = props => {
   console.log("props cocktailList", props);
   return (
     <div>
-      <Typography variant="h4" className={classes.title}>
+      <Typography variant="h3" className={classes.title}>
         Tasty Gin Cocktails To Stare At
       </Typography>
       <button onClick={props.getData}>
         {props.isLoading ? (
           <Loader type="ThreeDots" color="#aa71b5" height="15" width="100" />
         ) : (
-          "Get Gin Cocktail Data"
+          "Show Me the Drinks!"
         )}
       </button>
       <Grid

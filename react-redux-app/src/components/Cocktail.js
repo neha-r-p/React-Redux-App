@@ -10,6 +10,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
     width: 345,
     margin: '20px',
+    boxShadow: '0px 0px 10px #aa71b5'
   },
   media: {
     height: 275
