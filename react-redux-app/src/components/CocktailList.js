@@ -6,25 +6,43 @@ import { getData } from "../actions";
 
 import Cocktail from "./Cocktail";
 
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+
+const useStyles = makeStyles({
+  title: {
+    fontWeight: "bold",
+    margin: 30
+  }
+});
 
 const CocktailList = props => {
+  const classes = useStyles();
   console.log("props cocktailList", props);
   return (
     <div>
-      <Typography variant="h4">Tasty Gin Cocktails To Stare At</Typography>
+      <Typography variant="h4" className={classes.title}>
+        Tasty Gin Cocktails To Stare At
+      </Typography>
       <button onClick={props.getData}>
         {props.isLoading ? (
-          <Loader type="tailspin" color="#00BFFF" height="15" width="100" />
+          <Loader type="ThreeDots" color="#aa71b5" height="15" width="100" />
         ) : (
           "Get Gin Cocktail Data"
         )}
       </button>
-      {props.cocktails &&
-        props.cocktails.map(drink => (
-          <Cocktail key={drink.idDrink} cocktail={drink} />
-        ))}
+      <Grid
+        container
+        direction="row"
+        justify="space-evenly"
+        alignItems="center"
+      >
+        {props.cocktails &&
+          props.cocktails.map(drink => (
+            <Cocktail key={drink.idDrink} cocktail={drink} />
+          ))}
+      </Grid>
     </div>
   );
 };
