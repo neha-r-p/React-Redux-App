@@ -6,11 +6,14 @@ import { getData } from "../actions";
 
 import Cocktail from "./Cocktail";
 
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+
 const CocktailList = props => {
   console.log("props cocktailList", props);
   return (
     <div>
-      <h1>Tasty Gin Cocktails To Stare At</h1>
+      <Typography variant="h4">Tasty Gin Cocktails To Stare At</Typography>
       <button onClick={props.getData}>
         {props.isLoading ? (
           <Loader type="tailspin" color="#00BFFF" height="15" width="100" />
