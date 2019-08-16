@@ -10,7 +10,7 @@ const CocktailList = props => {
   console.log("props cocktailList", props);
   return (
     <div>
-      <h1>Tasty Gin Cocktails</h1>
+      <h1>Tasty Gin Cocktails To Stare At</h1>
       <button onClick={props.getData}>
         {props.isLoading ? (
           <Loader type="tailspin" color="#00BFFF" height="15" width="100" />
