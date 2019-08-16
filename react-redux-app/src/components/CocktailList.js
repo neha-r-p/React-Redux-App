@@ -7,7 +7,7 @@ import { getData } from "../actions";
 import Cocktail from "./Cocktail";
 
 const CocktailList = props => {
-  console.log(props);
+  console.log("props cocktailList", props);
   return (
     <div>
       <h1>Tasty Gin Cocktails</h1>

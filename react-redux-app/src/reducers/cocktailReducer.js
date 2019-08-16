@@ -14,11 +14,16 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_COCKTAIL_DATA_START:
       return {
-        ...state
+        ...state,
+        isLoading: true,
+        error: ""
       };
     case FETCH_COCKTAIL_DATA_SUCCESS:
       return {
-        ...state
+        ...state,
+        cocktails: action.payload,
+        isLoading: false,
+        error: ""
       };
     default:
       return state;
